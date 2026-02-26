@@ -1,0 +1,499 @@
+
+@charset "UTF-8";
+
+body,
+div {
+  display: grid;
+}
+
+body {
+  place-content: center;
+  overflow-x: hidden;
+  margin: 0;
+  height: 100vh;
+  perspective: 35em;
+  background: #000014;
+}
+
+div {
+  transform-style: preserve-3d;
+}
+
+.a3d {
+  --m: calc(.5*(var(--n-stars) - 1));
+  --t: calc(0.33333*var(--n-stars)*0.1s);
+  animation: roty 12s linear var(--t) infinite reverse;
+}
+
+@keyframes roty {
+  to {
+    rotate: y 1turn;
+  }
+}
+
+.🌟 {
+  --q: Min(1, var(--j));
+  --p: calc(1 - var(--q));
+  --s: calc((1.25*var(--p) + var(--q)*var(--sf))*2em);
+  --ay0: calc(var(--i)/var(--n-arms)*1turn);
+  --ay1: calc(var(--ay0) - var(--n-loops)*1turn);
+  --ay: calc((var(--j)/var(--n-stars)*var(--n-loops) + var(--i)/var(--n-arms))*1turn);
+  --tx: calc(var(--q)*var(--rox)*2em);
+  --ty0: calc(var(--m)/var(--n-stars)*20em);
+  --ty1: calc(-1*var(--ty0) - 0.75*2em);
+  --ty: calc((var(--j) - var(--m))/var(--n-stars)*20em + (var(--q)*var(--roy) - var(--p)*0.75)*2em);
+  --tz: calc(var(--j)/var(--n-stars)*10em + var(--q)*var(--roz)*2em);
+  grid-area: 1/ 1;
+  width: var(--s);
+  height: var(--s);
+  --pos: rotatey(var(--ay)) translate3d(var(--tx), var(--ty), var(--tz)) rotatey(calc(-1*var(--ay)));
+  transform: var(--pos);
+  --dt: calc(0.33333*(var(--n-stars) - var(--j))*0.1s);
+  animation: grow calc(var(--q)*0.1s) ease-out var(--dt) backwards, move calc(var(--p)*var(--t)) linear;
+}
+
+.🌟::after {
+  opacity: calc(var(--p) + var(--q)*var(--j)/var(--n-stars) + .25);
+  background: radial-gradient(#fffacd 10%, rgba(255, 250, 205, 0.2));
+  clip-path: polygon(50% 0%, 53.53553% 41.46447%, 85.35534% 14.64466%, 58.53553% 46.46447%, 100% 50%, 58.53553% 53.53553%, 85.35534% 85.35534%, 53.53553% 58.53553%, 50% 100%, 46.46447% 58.53553%, 14.64466% 85.35534%, 41.46447% 53.53553%, 0% 50%, 41.46447% 46.46447%, 14.64466% 14.64466%, 46.46447% 41.46447%);
+  animation: roty 12s linear var(--t) infinite, puls calc(var(--p)*.1s) ease-in-out infinite alternate, hue 4s linear var(--dt) infinite;
+  content: "";
+}
+
+@keyframes grow {
+  0% {
+    transform: var(--pos) scale(0);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotatey(var(--ay0)) translate3d(0, var(--ty0), 10em) rotatey(calc(-1*var(--ay0)));
+  }
+
+  100% {
+    transform: rotatey(var(--ay1)) translate3d(0, var(--ty1), 0) rotatey(calc(-1*var(--ay1)));
+  }
+}
+
+@keyframes puls {
+  to {
+    scale: .2;
+    opacity: 0.2;
+  }
+}
+
+@keyframes hue {
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+.🌟:nth-child(n + 1) {
+  --i: 0
+}
+
+.🌟:nth-child(n + 101) {
+  --i: 1
+}
+
+.🌟:nth-child(100n + 1) {
+  --j: 0
+}
+
+.🌟:nth-child(100n + 2) {
+  --j: 1
+}
+
+.🌟:nth-child(100n + 3) {
+  --j: 2
+}
+
+.🌟:nth-child(100n + 4) {
+  --j: 3
+}
+
+.🌟:nth-child(100n + 5) {
+  --j: 4
+}
+
+.🌟:nth-child(100n + 6) {
+  --j: 5
+}
+
+.🌟:nth-child(100n + 7) {
+  --j: 6
+}
+
+.🌟:nth-child(100n + 8) {
+  --j: 7
+}
+
+.🌟:nth-child(100n + 9) {
+  --j: 8
+}
+
+.🌟:nth-child(100n + 10) {
+  --j: 9
+}
+
+.🌟:nth-child(100n + 11) {
+  --j: 10
+}
+
+.🌟:nth-child(100n + 12) {
+  --j: 11
+}
+
+.🌟:nth-child(100n + 13) {
+  --j: 12
+}
+
+.🌟:nth-child(100n + 14) {
+  --j: 13
+}
+
+.🌟:nth-child(100n + 15) {
+  --j: 14
+}
+
+.🌟:nth-child(100n + 16) {
+  --j: 15
+}
+
+.🌟:nth-child(100n + 17) {
+  --j: 16
+}
+
+.🌟:nth-child(100n + 18) {
+  --j: 17
+}
+
+.🌟:nth-child(100n + 19) {
+  --j: 18
+}
+
+.🌟:nth-child(100n + 20) {
+  --j: 19
+}
+
+.🌟:nth-child(100n + 21) {
+  --j: 20
+}
+
+.🌟:nth-child(100n + 22) {
+  --j: 21
+}
+
+.🌟:nth-child(100n + 23) {
+  --j: 22
+}
+
+.🌟:nth-child(100n + 24) {
+  --j: 23
+}
+
+.🌟:nth-child(100n + 25) {
+  --j: 24
+}
+
+.🌟:nth-child(100n + 26) {
+  --j: 25
+}
+
+.🌟:nth-child(100n + 27) {
+  --j: 26
+}
+
+.🌟:nth-child(100n + 28) {
+  --j: 27
+}
+
+.🌟:nth-child(100n + 29) {
+  --j: 28
+}
+
+.🌟:nth-child(100n + 30) {
+  --j: 29
+}
+
+.🌟:nth-child(100n + 31) {
+  --j: 30
+}
+
+.🌟:nth-child(100n + 32) {
+  --j: 31
+}
+
+.🌟:nth-child(100n + 33) {
+  --j: 32
+}
+
+.🌟:nth-child(100n + 34) {
+  --j: 33
+}
+
+.🌟:nth-child(100n + 35) {
+  --j: 34
+}
+
+.🌟:nth-child(100n + 36) {
+  --j: 35
+}
+
+.🌟:nth-child(100n + 37) {
+  --j: 36
+}
+
+.🌟:nth-child(100n + 38) {
+  --j: 37
+}
+
+.🌟:nth-child(100n + 39) {
+  --j: 38
+}
+
+.🌟:nth-child(100n + 40) {
+  --j: 39
+}
+
+.🌟:nth-child(100n + 41) {
+  --j: 40
+}
+
+.🌟:nth-child(100n + 42) {
+  --j: 41
+}
+
+.🌟:nth-child(100n + 43) {
+  --j: 42
+}
+
+.🌟:nth-child(100n + 44) {
+  --j: 43
+}
+
+.🌟:nth-child(100n + 45) {
+  --j: 44
+}
+
+.🌟:nth-child(100n + 46) {
+  --j: 45
+}
+
+.🌟:nth-child(100n + 47) {
+  --j: 46
+}
+
+.🌟:nth-child(100n + 48) {
+  --j: 47
+}
+
+.🌟:nth-child(100n + 49) {
+  --j: 48
+}
+
+.🌟:nth-child(100n + 50) {
+  --j: 49
+}
+
+.🌟:nth-child(100n + 51) {
+  --j: 50
+}
+
+.🌟:nth-child(100n + 52) {
+  --j: 51
+}
+
+.🌟:nth-child(100n + 53) {
+  --j: 52
+}
+
+.🌟:nth-child(100n + 54) {
+  --j: 53
+}
+
+.🌟:nth-child(100n + 55) {
+  --j: 54
+}
+
+.🌟:nth-child(100n + 56) {
+  --j: 55
+}
+
+.🌟:nth-child(100n + 57) {
+  --j: 56
+}
+
+.🌟:nth-child(100n + 58) {
+  --j: 57
+}
+
+.🌟:nth-child(100n + 59) {
+  --j: 58
+}
+
+.🌟:nth-child(100n + 60) {
+  --j: 59
+}
+
+.🌟:nth-child(100n + 61) {
+  --j: 60
+}
+
+.🌟:nth-child(100n + 62) {
+  --j: 61
+}
+
+.🌟:nth-child(100n + 63) {
+  --j: 62
+}
+
+.🌟:nth-child(100n + 64) {
+  --j: 63
+}
+
+.🌟:nth-child(100n + 65) {
+  --j: 64
+}
+
+.🌟:nth-child(100n + 66) {
+  --j: 65
+}
+
+.🌟:nth-child(100n + 67) {
+  --j: 66
+}
+
+.🌟:nth-child(100n + 68) {
+  --j: 67
+}
+
+.🌟:nth-child(100n + 69) {
+  --j: 68
+}
+
+.🌟:nth-child(100n + 70) {
+  --j: 69
+}
+
+.🌟:nth-child(100n + 71) {
+  --j: 70
+}
+
+.🌟:nth-child(100n + 72) {
+  --j: 71
+}
+
+.🌟:nth-child(100n + 73) {
+  --j: 72
+}
+
+.🌟:nth-child(100n + 74) {
+  --j: 73
+}
+
+.🌟:nth-child(100n + 75) {
+  --j: 74
+}
+
+.🌟:nth-child(100n + 76) {
+  --j: 75
+}
+
+.🌟:nth-child(100n + 77) {
+  --j: 76
+}
+
+.🌟:nth-child(100n + 78) {
+  --j: 77
+}
+
+.🌟:nth-child(100n + 79) {
+  --j: 78
+}
+
+.🌟:nth-child(100n + 80) {
+  --j: 79
+}
+
+.🌟:nth-child(100n + 81) {
+  --j: 80
+}
+
+.🌟:nth-child(100n + 82) {
+  --j: 81
+}
+
+.🌟:nth-child(100n + 83) {
+  --j: 82
+}
+
+.🌟:nth-child(100n + 84) {
+  --j: 83
+}
+
+.🌟:nth-child(100n + 85) {
+  --j: 84
+}
+
+.🌟:nth-child(100n + 86) {
+  --j: 85
+}
+
+.🌟:nth-child(100n + 87) {
+  --j: 86
+}
+
+.🌟:nth-child(100n + 88) {
+  --j: 87
+}
+
+.🌟:nth-child(100n + 89) {
+  --j: 88
+}
+
+.🌟:nth-child(100n + 90) {
+  --j: 89
+}
+
+.🌟:nth-child(100n + 91) {
+  --j: 90
+}
+
+.🌟:nth-child(100n + 92) {
+  --j: 91
+}
+
+.🌟:nth-child(100n + 93) {
+  --j: 92
+}
+
+.🌟:nth-child(100n + 94) {
+  --j: 93
+}
+
+.🌟:nth-child(100n + 95) {
+  --j: 94
+}
+
+.🌟:nth-child(100n + 96) {
+  --j: 95
+}
+
+.🌟:nth-child(100n + 97) {
+  --j: 96
+}
+
+.🌟:nth-child(100n + 98) {
+  --j: 97
+}
+
+.🌟:nth-child(100n + 99) {
+  --j: 98
+}
+
+.🌟:nth-child(100n + 100) {
+  --j: 99
+}
